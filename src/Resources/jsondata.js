@@ -1,5 +1,5 @@
 // this is to emulate json request that we are going to send to backend later, this will be replaced with backend request in latter commits.
-const DEFAULT_CARDS = [
+export const DEFAULT_CARDS = [
   // BACKLOG
   { title: "Fix the API route Bug", id: "1", column: "backlog" },
   {
