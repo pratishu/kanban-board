@@ -1,12 +1,10 @@
 import React from "react";
+import { Board } from "./Board";
 
 function App() {
   return (
-    <div
-      className="text-8xl text-blue-500 text-center bg-blue-200 leading-loose
-    "
-    >
-      tailwind is working now
+    <div className="w-full h-screen bg-gray-800 text-gray-50">
+      <Board />
     </div>
   );
 }
