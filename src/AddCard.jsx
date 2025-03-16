@@ -10,6 +10,7 @@ const AddCard = ({ column, setCards }) => {
 
     if (!text.trim().length) return;
 
+    // we are generating title and id randomly
     const newCard = {
       column,
       title: text.trim(),
@@ -49,7 +50,7 @@ const AddCard = ({ column, setCards }) => {
         </motion.form>
       ) : (
         <motion.button
-          layout
+          layout // requirement from motion
           onClick={() => setAdding(true)}
           className="flex w-full items-center gap-1.5 px-3 py-1.5 text-lg text-gray-400 transition-colors hover:text-gray-50"
         >

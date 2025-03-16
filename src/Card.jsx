@@ -11,7 +11,7 @@ const Card = ({ title, id, column, handleDragStart }) => {
         layout
         layoutId={id}
         draggable="true"
-        onDragStart={(e) => handleDragStart(e, { title, id, column })}
+        onDragStart={(e) => handleDragStart(e, { title, id, column })} // handledragstart is taking card component and e.dataTransfer.setData is storing card.id
         className="cursor-grab rounded-lg border-2 border-gray-500 bg-zinc-800/20 p-3 active:cursor-grabbing"
       >
         <p className="font-medium text-gray-100">{title}</p>

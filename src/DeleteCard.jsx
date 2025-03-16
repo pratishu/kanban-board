@@ -13,6 +13,7 @@ const DeleteCards = ({ setCards }) => {
   };
 
   const handleDragEnd = (e) => {
+    // e.datatransfer.getdata have already set up cardid when we start to move the card from the column
     const cardId = e.dataTransfer.getData("cardId");
 
     setCards((pv) => pv.filter((c) => c.id !== cardId));
