@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Column } from "./Column";
 import DeleteCards from "./DeleteCard";
 import { DEFAULT_CARDS } from "./Resources/jsondata";
 
 export const Board = () => {
-  const [cards, setcards] = useState(DEFAULT_CARDS);
+  const [cards, setcards] = useState([]);
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    checked && localStorage.setItem("cards", JSON.stringify(cards));
+  }, [cards]);
+  useEffect(() => {
+    const carddata = localStorage.getItem("cards");
+    setcards(carddata ? JSON.parse(carddata) : DEFAULT_CARDS); // we are giving default cards or making user set some cards which persist the refresh state
+    setChecked(true);
+  }, []);
   return (
     <div className="flex h-full w-full gap-8 overflow-scroll justify-center pt-16">
       <Column
