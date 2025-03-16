@@ -5,7 +5,7 @@ import { DEFAULT_CARDS } from "./Resources/jsondata";
 export const Board = () => {
   const [cards, setcards] = useState(DEFAULT_CARDS);
   return (
-    <div className="flex h-full w-full gap-8 overflow-scroll justify-center">
+    <div className="flex h-full w-full gap-8 overflow-scroll justify-center p-12">
       <Column
         title="Backlog"
         column="backlog"
