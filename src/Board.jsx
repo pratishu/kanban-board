@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Column } from "./Column";
+import DeleteCards from "./DeleteCard";
 import { DEFAULT_CARDS } from "./Resources/jsondata";
 
 export const Board = () => {
   const [cards, setcards] = useState(DEFAULT_CARDS);
   return (
-    <div className="flex h-full w-full gap-8 overflow-scroll justify-center p-12">
+    <div className="flex h-full w-full gap-8 overflow-scroll justify-center pt-16">
       <Column
         title="Backlog"
         column="backlog"
@@ -35,6 +36,7 @@ export const Board = () => {
         setcards={setcards}
         headingcolor="text-blue-500"
       />
+      <DeleteCards setCards={setcards} />
     </div>
   );
 };
